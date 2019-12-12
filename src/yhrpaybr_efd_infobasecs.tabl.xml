@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_TABL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD02V>
+    <TABNAME>YHRPAYBR_EFD_INFOBASECS</TABNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <TABCLASS>INTTAB</TABCLASS>
+    <DDTEXT>Info de Base de cálculo, descontos e deduções de CS</DDTEXT>
+   </DD02V>
+   <DD03P_TABLE>
+    <DD03P>
+     <TABNAME>YHRPAYBR_EFD_INFOBASECS</TABNAME>
+     <FIELDNAME>IND13</FIELDNAME>
+     <POSITION>0001</POSITION>
+     <ROLLNAME>YHRPAYBR_EFD_IND13</ROLLNAME>
+     <ADMINFIELD>0</ADMINFIELD>
+     <COMPTYPE>E</COMPTYPE>
+    </DD03P>
+    <DD03P>
+     <TABNAME>YHRPAYBR_EFD_INFOBASECS</TABNAME>
+     <FIELDNAME>TPVALOR</FIELDNAME>
+     <POSITION>0002</POSITION>
+     <ROLLNAME>YHRPAYBR_EFD_TPVALOR</ROLLNAME>
+     <ADMINFIELD>0</ADMINFIELD>
+     <COMPTYPE>E</COMPTYPE>
+    </DD03P>
+    <DD03P>
+     <TABNAME>YHRPAYBR_EFD_INFOBASECS</TABNAME>
+     <FIELDNAME>VALOR</FIELDNAME>
+     <POSITION>0003</POSITION>
+     <ROLLNAME>YHRPAYBR_EFD_VALOR</ROLLNAME>
+     <ADMINFIELD>0</ADMINFIELD>
+     <COMPTYPE>E</COMPTYPE>
+    </DD03P>
+   </DD03P_TABLE>
+  </asx:values>
+ </asx:abap>
+</abapGit>

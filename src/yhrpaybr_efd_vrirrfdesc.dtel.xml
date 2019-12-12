@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>YHRPAYBR_EFD_VRIRRFDESC</ROLLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <HEADLEN>34</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>15</SCRLEN2>
+    <SCRLEN3>20</SCRLEN3>
+    <DDTEXT>Valor descontado IRRF</DDTEXT>
+    <REPTEXT>Valor IRRF efetivamente descontado</REPTEXT>
+    <SCRTEXT_S>Vlr.IRRF</SCRTEXT_S>
+    <SCRTEXT_M>Vlr.IRRF</SCRTEXT_M>
+    <SCRTEXT_L>Vlr.IRRF Descontado</SCRTEXT_L>
+    <DTELMASTER>P</DTELMASTER>
+    <DATATYPE>DEC</DATATYPE>
+    <LENG>000014</LENG>
+    <DECIMALS>000002</DECIMALS>
+    <OUTPUTLEN>000018</OUTPUTLEN>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

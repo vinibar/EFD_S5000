@@ -1,0 +1,144 @@
+<xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sap="http://www.sap.com/sapxsl" version="1.0">
+
+  <xsl:strip-space elements="*"/>
+
+  <xsl:template match="/">
+    <xsl:apply-templates select="//evtBasesTrab"/>
+  </xsl:template>
+
+  <xsl:template match="evtBasesTrab">
+    <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+      <asx:values>
+        <STRUCTURE>
+          <IDEEMPREGADOR>
+            <xsl:apply-templates select="ideEmpregador"/>
+          </IDEEMPREGADOR>
+          <IDETRABALHADOR>
+            <xsl:apply-templates select="ideTrabalhador"/>
+          </IDETRABALHADOR>
+          <INFOCPCALC>
+            <xsl:apply-templates select="infoCpCalc"/>
+          </INFOCPCALC>
+          <INFOCP>
+            <xsl:apply-templates select="infoCp"/>
+          </INFOCP>
+        </STRUCTURE>
+      </asx:values>
+    </asx:abap>
+  </xsl:template>
+
+  <xsl:template match="ideEmpregador">
+    <TPINSC>
+      <xsl:value-of select="tpInsc"/>
+    </TPINSC>
+    <NRINSC>
+      <xsl:value-of select="nrInsc"/>
+    </NRINSC>
+  </xsl:template>
+
+
+  <xsl:template match="ideTrabalhador">
+    <CPFTRAB>
+      <xsl:value-of select="cpfTrab"/>
+    </CPFTRAB>
+    <PROCJUDTRAB>
+      <xsl:apply-templates select="procJudTrab"/>
+    </PROCJUDTRAB>
+  </xsl:template>
+
+
+  <xsl:template match="procJudTrab">
+    <YHRPAYBR_EFD_PROCJUR_TAB>
+      <NRPROCJUD>
+        <xsl:value-of select="nrProcJud"/>
+      </NRPROCJUD>
+      <CODSUSP>
+        <xsl:value-of select="codSusp"/>
+      </CODSUSP>
+    </YHRPAYBR_EFD_PROCJUR_TAB>
+  </xsl:template>
+
+  <xsl:template match="infoCpCalc">
+    <TPCR>
+      <xsl:value-of select="tpCR"/>
+    </TPCR>
+    <VRCPSEG>
+      <xsl:value-of select="vrCpSeg"/>
+    </VRCPSEG>
+    <VRDESCSEG>
+      <xsl:value-of select="vrDescSeg"/>
+    </VRDESCSEG>
+  </xsl:template>
+
+  <xsl:template match="infoCp">
+    <IDEESTABLOT>
+      <xsl:apply-templates select="ideEstabLot"/>
+    </IDEESTABLOT>
+  </xsl:template>
+
+  <xsl:template match="ideEstabLot">
+    <YHRPAYBR_EFD_IDEESTABLOT_TAB>
+      <TPINSC>
+        <xsl:value-of select="tpInsc"/>
+      </TPINSC>
+      <NRINSC>
+        <xsl:value-of select="nrInsc"/>
+      </NRINSC>
+      <CODLOTACAO>
+        <xsl:value-of select="codLotacao"/>
+      </CODLOTACAO>
+      <INFOCATEGINCID>
+        <xsl:apply-templates select="infoCategIncid"/>
+      </INFOCATEGINCID>
+    </YHRPAYBR_EFD_IDEESTABLOT_TAB>
+  </xsl:template>
+
+  <xsl:template match="infoCategIncid">
+    <YHRPAYBR_EFD_INFOCATEGINCI_TAB>
+      <MATRICULA>
+        <xsl:value-of select="matricula"/>
+      </MATRICULA>
+      <CODCATEG>
+        <xsl:value-of select="codCateg"/>
+      </CODCATEG>
+      <INDSIMPLES>
+        <xsl:value-of select="indSimples"/>
+      </INDSIMPLES>
+      <INFOBASECS>
+        <xsl:apply-templates select="infoBaseCS"/>
+      </INFOBASECS>
+      <CALCTERC>
+        <xsl:apply-templates select="calcTerc"/>
+      </CALCTERC>
+    </YHRPAYBR_EFD_INFOCATEGINCI_TAB>
+  </xsl:template>
+
+  <xsl:template match="infoBaseCS">
+    <YHRPAYBR_EFD_INFOBASECS_TAB>
+      <IND13>
+        <xsl:value-of select="ind13"/>
+      </IND13>
+      <TPVALOR>
+        <xsl:value-of select="tpValor"/>
+      </TPVALOR>
+      <VALOR>
+        <xsl:value-of select="valor"/>
+      </VALOR>
+    </YHRPAYBR_EFD_INFOBASECS_TAB>
+  </xsl:template>
+
+  <xsl:template match="calcTerc">
+    <YHRPAYBR_EFD_CALCTERC_TAB>
+      <TPCR>
+        <xsl:value-of select="tpCr"/>
+      </TPCR>
+      <VRCSSEGTERC>
+        <xsl:value-of select="vrCsSegTerc"/>
+      </VRCSSEGTERC>
+      <VRDESCTERC>
+        <xsl:value-of select="vrDescTerc"/>
+      </VRDESCTERC>
+    </YHRPAYBR_EFD_CALCTERC_TAB>
+  </xsl:template>
+
+</xsl:transform>

@@ -1,0 +1,389 @@
+<xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sap="http://www.sap.com/sapxsl" version="1.0">
+
+  <xsl:strip-space elements="*"/>
+
+  <xsl:template match="/">
+    <xsl:apply-templates select="//evtCS"/>
+  </xsl:template>
+
+  <xsl:template match="evtCS">
+    <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+      <asx:values>
+        <STRUCTURE>
+          <IDEEMPREGADOR>
+            <xsl:apply-templates select="ideEmpregador"/>
+          </IDEEMPREGADOR>
+          <INFOCS>
+            <xsl:apply-templates select="infoCS"/>
+          </INFOCS>
+        </STRUCTURE>
+      </asx:values>
+    </asx:abap>
+  </xsl:template>
+
+  <xsl:template match="ideEmpregador">
+    <TPINSC>
+      <xsl:value-of select="tpInsc"/>
+    </TPINSC>
+    <NRINSC>
+      <xsl:value-of select="nrInsc"/>
+    </NRINSC>
+  </xsl:template>
+
+  <xsl:template match="infoCS">
+    <NRRECARQBASE>
+      <xsl:value-of select="nrRecArqBase"/>
+    </NRRECARQBASE>
+    <INDEXISTINFO>
+      <xsl:value-of select="indExistInfo"/>
+    </INDEXISTINFO>
+    <INFOCPSEG>
+      <xsl:apply-templates select="infoCPSeg"/>
+    </INFOCPSEG>
+    <INFOCONTRIB>
+      <xsl:apply-templates select="infoContrib"/>
+    </INFOCONTRIB>
+    <IDEESTAB>
+      <xsl:apply-templates select="ideEstab"/>
+    </IDEESTAB>
+    <INFOCRCONTRIB>
+      <xsl:apply-templates select="infoCRContrib"/>
+    </INFOCRCONTRIB>
+  </xsl:template>
+
+  <xsl:template match="infoCPSeg">
+    <VRDESCCP>
+      <xsl:value-of select="vrDescCP"/>
+    </VRDESCCP>
+    <VRCPSEG>
+      <xsl:value-of select="vrCpSeg"/>
+    </VRCPSEG>
+  </xsl:template>
+
+  <xsl:template match="infoContrib">
+    <YHRPAYBR_EFD_INFOCRCONTRIB_TAB>
+      <CLASSTRIB>
+        <xsl:value-of select="classTrib"/>
+      </CLASSTRIB>
+      <INFOPJ>
+        <xsl:apply-templates select="infoPJ"/>
+      </INFOPJ>
+    </YHRPAYBR_EFD_INFOCRCONTRIB_TAB>
+  </xsl:template>
+
+  <xsl:template match="infoPJ">
+    <INDCOOP>
+      <xsl:value-of select="indCoop"/>
+    </INDCOOP>
+    <INDCONSTR>
+      <xsl:value-of select="indConstr"/>
+    </INDCONSTR>
+    <INDSUBSTPATR>
+      <xsl:value-of select="indSubstPatr"/>
+    </INDSUBSTPATR>
+    <PERCREDCONTRIB>
+      <xsl:value-of select="percRedContrib"/>
+    </PERCREDCONTRIB>
+    <INFOATCONC>
+      <xsl:apply-templates select="infoAtConc"/>
+    </INFOATCONC>
+  </xsl:template>
+
+  <xsl:template match="infoAtConc">
+    <FATORMES>
+      <xsl:value-of select="fatorMes"/>
+    </FATORMES>
+    <FATOR13>
+      <xsl:value-of select="fator13"/>
+    </FATOR13>
+  </xsl:template>
+
+  <xsl:template match="ideEstab">
+    <YHRPAYBR_EFD_IDEESTAB_TAB>
+      <TPINSC>
+        <xsl:value-of select="tpInsc"/>
+      </TPINSC>
+      <NRINSC>
+        <xsl:value-of select="nrInsc"/>
+      </NRINSC>
+      <INFOESTAB>
+        <xsl:apply-templates select="infoEstab"/>
+      </INFOESTAB>
+    </YHRPAYBR_EFD_IDEESTAB_TAB>
+  </xsl:template>
+
+  <xsl:template match="infoEstab">
+    <CNAEPREP>
+      <xsl:value-of select="cnaePrep"/>
+    </CNAEPREP>
+    <ALIQRAT>
+      <xsl:value-of select="aliqRat"/>
+    </ALIQRAT>
+    <FAP>
+      <xsl:apply-templates select="fap"/>
+    </FAP>
+    <ALIQRATAJUST>
+      <xsl:apply-templates select="aliqRatAjust"/>
+    </ALIQRATAJUST>
+    <INFOCOMPLOBRA>
+      <xsl:apply-templates select="infoComplObra"/>
+    </INFOCOMPLOBRA>
+    <IDELOTACAO>
+      <xsl:apply-templates select="ideLotacao"/>
+    </IDELOTACAO>
+    <BASESAQUIS>
+      <xsl:apply-templates select="basesAquis"/>
+    </BASESAQUIS>
+    <BASESCOMERC>
+      <xsl:apply-templates select="basesComerc"/>
+    </BASESCOMERC>
+    <INFOCRESTAB>
+      <xsl:apply-templates select="infoCREstab"/>
+    </INFOCRESTAB>
+  </xsl:template>
+
+  <xsl:template match="ideLotacao">
+    <YHRPAYBR_EFD_IDEESTAB_TAB>
+      <CODLOTACAO>
+        <xsl:value-of select="codLotacao"/>
+      </CODLOTACAO>
+      <FPAS>
+        <xsl:value-of select="fpas"/>
+      </FPAS>
+      <CODTERCS>
+        <xsl:value-of select="codTercs"/>
+      </CODTERCS>
+      <CODTERCSSUSP>
+        <xsl:value-of select="codTercsSusp"/>
+      </CODTERCSSUSP>
+      <INFOTERCSUSP>
+        <xsl:apply-templates select="infoTercSusp"/>
+      </INFOTERCSUSP>
+      <INFOEMPRPARCIAL>
+        <xsl:apply-templates select="infoEmprParcial"/>
+      </INFOEMPRPARCIAL>
+      <DADOSOPPORT>
+        <xsl:apply-templates select="dadosOpPort"/>
+      </DADOSOPPORT>
+      <BASESREMUN>
+        <xsl:apply-templates select="basesRemun"/>
+      </BASESREMUN>
+      <BASESAVNPORT>
+        <xsl:apply-templates select="basesAvNPort"/>
+      </BASESAVNPORT>
+      <INFOSUBSTPATROPPORT>
+        <xsl:apply-templates select="infoSubstPatrOpPort"/>
+      </INFOSUBSTPATROPPORT>
+    </YHRPAYBR_EFD_IDEESTAB_TAB>
+  </xsl:template>
+
+  <xsl:template match="infoTercSusp">
+    <CODTERC>
+      <xsl:value-of select="codTerc"/>
+    </CODTERC>
+  </xsl:template>
+
+  <xsl:template match="infoEmprParcial">
+    <TPINSCCONTRAT>
+      <xsl:value-of select="tpInscContrat"/>
+    </TPINSCCONTRAT>
+    <NRINSCCONTRAT>
+      <xsl:value-of select="nrInscContrat"/>
+    </NRINSCCONTRAT>
+    <TPINSCPROP>
+      <xsl:value-of select="tpInscProp"/>
+    </TPINSCPROP>
+    <NRINSCPROP>
+      <xsl:value-of select="nrInscProp"/>
+    </NRINSCPROP>
+  </xsl:template>
+
+  <xsl:template match="dadosOpPort">
+    <CNPJOPPORTUARIO>
+      <xsl:value-of select="cnpjOpPortuario"/>
+    </CNPJOPPORTUARIO>
+    <ALIQRAT>
+      <xsl:value-of select="aliqRat"/>
+    </ALIQRAT>
+    <FAP>
+      <xsl:value-of select="fap"/>
+    </FAP>
+    <ALIQRATAJUST>
+      <xsl:value-of select="aliqRatAjust"/>
+    </ALIQRATAJUST>
+  </xsl:template>
+
+  <xsl:template match="basesRemun">
+    <INDINCID>
+      <xsl:value-of select="indIncid"/>
+    </INDINCID>
+    <CODCATEG>
+      <xsl:value-of select="codCateg"/>
+    </CODCATEG>
+    <BASESCP>
+      <xsl:apply-templates select="basesCp"/>
+    </BASESCP>
+  </xsl:template>
+
+  <xsl:template match="basesCp">
+    <VRBCCP00>
+      <xsl:value-of select="vrBcCp00"/>
+    </VRBCCP00>
+    <VRBCCP15>
+      <xsl:value-of select="vrBcCp15"/>
+    </VRBCCP15>
+    <VRBCCP20>
+      <xsl:apply-templates select="vrBcCp20"/>
+    </VRBCCP20>
+    <VRBCCP25>
+      <xsl:apply-templates select="vrBcCp25"/>
+    </VRBCCP25>
+    <VRSUSPBCCP00>
+      <xsl:apply-templates select="vrSuspBcCp00"/>
+    </VRSUSPBCCP00>
+    <VRSUSPBCCP15>
+      <xsl:apply-templates select="vrSuspBcCp15"/>
+    </VRSUSPBCCP15>
+    <VRSUSPBCCP20>
+      <xsl:apply-templates select="vrSuspBcCp20"/>
+    </VRSUSPBCCP20>
+    <VRSUSPBCCP25>
+      <xsl:apply-templates select="vrSuspBcCp25"/>
+    </VRSUSPBCCP25>
+    <VRDESCSEST>
+      <xsl:apply-templates select="vrDescSest"/>
+    </VRDESCSEST>
+    <VRCALCSEST>
+      <xsl:apply-templates select="vrCalcSest"/>
+    </VRCALCSEST>
+    <VRDESCSENAT>
+      <xsl:apply-templates select="vrDescSenat"/>
+    </VRDESCSENAT>
+    <VRCALCSENAT>
+      <xsl:apply-templates select="vrCalcSenat"/>
+    </VRCALCSENAT>
+    <VRSALFAM>
+      <xsl:apply-templates select="vrSalFam"/>
+    </VRSALFAM>
+    <VRSALMAT>
+      <xsl:apply-templates select="vrSalMat"/>
+    </VRSALMAT>
+  </xsl:template>
+
+  <xsl:template match="basesAvNPort">
+    <vrBcCp00>
+      <xsl:value-of select="vrBcCp00"/>
+    </vrBcCp00>
+    <vrBcCp15>
+      <xsl:value-of select="vrBcCp15"/>
+    </vrBcCp15>
+    <vrBcCp20>
+      <xsl:apply-templates select="vrBcCp20"/>
+    </vrBcCp20>
+    <vrBcCp25>
+      <xsl:apply-templates select="vrBcCp25"/>
+    </vrBcCp25>
+    <vrBcCp13>
+      <xsl:apply-templates select="vrBcCp13"/>
+    </vrBcCp13>
+    <vrBcFgts>
+      <xsl:apply-templates select="vrBcFgts"/>
+    </vrBcFgts>
+    <vrDescCP>
+      <xsl:apply-templates select="vrDescCP"/>
+    </vrDescCP>
+  </xsl:template>
+
+  <xsl:template match="infoSubstPatrOpPort">
+    <CNPJOPPORTUARIO>
+      <xsl:value-of select="cnpjOpPortuario"/>
+    </CNPJOPPORTUARIO>
+  </xsl:template>
+
+  <xsl:template match="basesAquis">
+    <YHRPAYBR_EFD_BASESAQUIS_TAB>
+      <INDAQUIS>
+        <xsl:value-of select="indAquis"/>
+      </INDAQUIS>
+      <VLRAQUIS>
+        <xsl:value-of select="vlrAquis"/>
+      </VLRAQUIS>
+      <VRCPDESCPR>
+        <xsl:value-of select="vrCPDescPR"/>
+      </VRCPDESCPR>
+      <VRCPNRET>
+        <xsl:value-of select="vrCPNRet"/>
+      </VRCPNRET>
+      <VRRATNRET>
+        <xsl:value-of select="vrRatNRet"/>
+      </VRRATNRET>
+      <VRSENARNRET>
+        <xsl:value-of select="vrSenarNRet"/>
+      </VRSENARNRET>
+      <VRCPCALCPR>
+        <xsl:value-of select="vrCPCalcPR"/>
+      </VRCPCALCPR>
+      <VRRATDESCPR>
+        <xsl:value-of select="vrRatDescPR"/>
+      </VRRATDESCPR>
+      <VRRATCALCPR>
+        <xsl:value-of select="vrRatCalcPR"/>
+      </VRRATCALCPR>
+      <VRSENARDESC>
+        <xsl:value-of select="vrSenarDesc"/>
+      </VRSENARDESC>
+      <VRSENARCALC>
+        <xsl:value-of select="vrSenarCalc"/>
+      </VRSENARCALC>
+    </YHRPAYBR_EFD_BASESAQUIS_TAB>
+  </xsl:template>
+
+  <xsl:template match="basesComerc">
+    <YHRPAYBR_EFD_BASESCOMERC_TAB>
+      <INDCOMERC>
+        <xsl:value-of select="indComerc"/>
+      </INDCOMERC>
+      <VRBCCOMPR>
+        <xsl:value-of select="vrBcComPR"/>
+      </VRBCCOMPR>
+      <VRCPSUSP>
+        <xsl:value-of select="vrCPSusp"/>
+      </VRCPSUSP>
+      <VRRATSUSP>
+        <xsl:value-of select="vrRatSusp"/>
+      </VRRATSUSP>
+      <VRSENARSUSP>
+        <xsl:value-of select="vrSenarSusp"/>
+      </VRSENARSUSP>
+    </YHRPAYBR_EFD_BASESCOMERC_TAB>
+  </xsl:template>
+
+  <xsl:template match="infoCREstab">
+    <YHRPAYBR_EFD_INFOCRESTAB_TAB>
+      <TPCR>
+        <xsl:value-of select="tpCR"/>
+      </TPCR>
+      <VRCR>
+        <xsl:value-of select="vrCR"/>
+      </VRCR>
+      <VRSUSPCR>
+        <xsl:value-of select="vrSuspCR"/>
+      </VRSUSPCR>
+    </YHRPAYBR_EFD_INFOCRESTAB_TAB>
+  </xsl:template>
+
+  <xsl:template match="infoCRContrib">
+    <YHRPAYBR_EFD_INFOCRCONTRIB_TAB>
+      <TPCR>
+        <xsl:value-of select="tpCR"/>
+      </TPCR>
+      <VRCR>
+        <xsl:value-of select="vrCR"/>
+      </VRCR>
+      <VRCRSUSP>
+        <xsl:value-of select="vrCRSusp"/>
+      </VRCRSUSP>
+    </YHRPAYBR_EFD_INFOCRCONTRIB_TAB>
+  </xsl:template>
+
+</xsl:transform>

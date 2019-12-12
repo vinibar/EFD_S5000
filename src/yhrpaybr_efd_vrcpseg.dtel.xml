@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>YHRPAYBR_EFD_VRCPSEG</ROLLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <HEADLEN>36</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>15</SCRLEN2>
+    <SCRLEN3>36</SCRLEN3>
+    <DDTEXT>Valor Contribuição do Segurado(s)</DDTEXT>
+    <REPTEXT>Valor Contribuição do(s) Segurado(s)</REPTEXT>
+    <SCRTEXT_S>Vlr.Contr.</SCRTEXT_S>
+    <SCRTEXT_M>Vlr.Contr.Seg.</SCRTEXT_M>
+    <SCRTEXT_L>Valor Contribuição do(s) Segurado(s)</SCRTEXT_L>
+    <DTELMASTER>P</DTELMASTER>
+    <DATATYPE>DEC</DATATYPE>
+    <LENG>000014</LENG>
+    <DECIMALS>000002</DECIMALS>
+    <OUTPUTLEN>000018</OUTPUTLEN>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

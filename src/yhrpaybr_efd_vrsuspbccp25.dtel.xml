@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>YHRPAYBR_EFD_VRSUSPBCCP25</ROLLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DOMNAME>YHRPAYBR_EFD_VR</DOMNAME>
+    <HEADLEN>46</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>15</SCRLEN2>
+    <SCRLEN3>38</SCRLEN3>
+    <DDTEXT>Base CP Suspensa (Apos.Esp &gt; 25 anos)</DDTEXT>
+    <REPTEXT>Base CP Susp. Aposentadoria Especial &gt; 25 anos</REPTEXT>
+    <SCRTEXT_S>BsCPSuAp25</SCRTEXT_S>
+    <SCRTEXT_M>BsCPSupApo.&gt;25</SCRTEXT_M>
+    <SCRTEXT_L>Base CP Susp. Apos. Especial &gt; 25 anos</SCRTEXT_L>
+    <DTELMASTER>P</DTELMASTER>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

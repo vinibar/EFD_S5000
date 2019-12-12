@@ -1,0 +1,133 @@
+<xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sap="http://www.sap.com/sapxsl" version="1.0" xmlns:abap="http://www.sap.com/abapxml">
+
+  <xsl:strip-space elements="*"/>
+
+  <xsl:template match="/">
+    <xsl:apply-templates select="//evtIrrfBenef"/>
+  </xsl:template>
+
+  <xsl:template match="evtIrrfBenef">
+    <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+      <asx:values>
+        <STRUCTURE>
+          <IDEEMPREGADOR>
+            <xsl:apply-templates select="ideEmpregador"/>
+          </IDEEMPREGADOR>
+          <IDETRABALHADOR>
+            <xsl:apply-templates select="ideTrabalhador"/>
+          </IDETRABALHADOR>
+          <INFODEP>
+            <xsl:apply-templates select="infoDep"/>
+          </INFODEP>
+          <INFOIRRF>
+            <xsl:apply-templates select="infoIrrf"/>
+          </INFOIRRF>
+        </STRUCTURE>
+      </asx:values>
+    </asx:abap>
+  </xsl:template>
+
+  <xsl:template match="ideEmpregador">
+    <TPINSC>
+      <xsl:value-of select="tpInsc"/>
+    </TPINSC>
+    <NRINSC>
+      <xsl:value-of select="nrInsc"/>
+    </NRINSC>
+  </xsl:template>
+
+  <xsl:template match="ideTrabalhador">
+    <CPFTRAB>
+      <xsl:value-of select="cpfTrab"/>
+    </CPFTRAB>
+  </xsl:template>
+
+  <xsl:template match="infoDep">
+    <VRDEDDEP>
+      <xsl:value-of select="vrDedDep"/>
+    </VRDEDDEP>
+  </xsl:template>
+
+  <xsl:template match="infoIrrf">
+    <CODCATEG>
+      <xsl:value-of select="codCateg"/>
+    </CODCATEG>
+    <INDRESBR>
+      <xsl:value-of select="indResBr"/>
+    </INDRESBR>
+    <BASESIRRF>
+      <xsl:apply-templates select="basesIrrf"/>
+    </BASESIRRF>
+    <IRRF>
+      <xsl:apply-templates select="irrf"/>
+    </IRRF>
+    <IDEPGTOEXT>
+      <xsl:apply-templates select="idePgtoExt"/>
+    </IDEPGTOEXT>
+  </xsl:template>
+
+  <xsl:template match="basesIrrf">
+    <YHRPAYBR_EFD_BASESIRRF>
+      <TPVALOR>
+        <xsl:value-of select="tpValor"/>
+      </TPVALOR>
+      <VALOR>
+        <xsl:value-of select="valor"/>
+      </VALOR>
+    </YHRPAYBR_EFD_BASESIRRF>
+  </xsl:template>
+
+  <xsl:template match="irrf">
+    <YHRPAYBR_EFD_IRRF>
+      <TPCR>
+        <xsl:value-of select="tpCR"/>
+      </TPCR>
+      <VRIRRFDESC>
+        <xsl:value-of select="vrIrrfDesc"/>
+      </VRIRRFDESC>
+    </YHRPAYBR_EFD_IRRF>
+  </xsl:template>
+
+  <xsl:template match="idePgtoExt">
+    <IDEPAIS>
+      <xsl:apply-templates select="idePais"/>
+    </IDEPAIS>
+    <ENDEXT>
+      <xsl:apply-templates select="endExt"/>
+    </ENDEXT>
+  </xsl:template>
+
+  <xsl:template match="idePais">
+    <CODPAIS>
+      <xsl:value-of select="codPais"/>
+    </CODPAIS>
+    <INDNIF>
+      <xsl:value-of select="indNIF"/>
+    </INDNIF>
+    <NIFBENEF>
+      <xsl:value-of select="nifBenef"/>
+    </NIFBENEF>
+  </xsl:template>
+
+  <xsl:template match="endExt">
+    <DSCLOGRAD>
+      <xsl:value-of select="dscLograd"/>
+    </DSCLOGRAD>
+    <NRLOGRAD>
+      <xsl:value-of select="nrLograd"/>
+    </NRLOGRAD>
+    <COMPLEM>
+      <xsl:value-of select="complem"/>
+    </COMPLEM>
+    <BAIRRO>
+      <xsl:value-of select="bairro"/>
+    </BAIRRO>
+    <NMCID>
+      <xsl:value-of select="nmCid"/>
+    </NMCID>
+    <CODPOSTAL>
+      <xsl:value-of select="codPostal"/>
+    </CODPOSTAL>
+  </xsl:template>
+
+</xsl:transform>

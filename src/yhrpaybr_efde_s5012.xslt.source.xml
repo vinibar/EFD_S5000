@@ -1,0 +1,61 @@
+<xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sap="http://www.sap.com/sapxsl" version="1.0">
+
+  <xsl:strip-space elements="*"/>
+
+  <xsl:template match="/">
+    <xsl:apply-templates select="//evtIrrf"/>
+  </xsl:template>
+
+  <xsl:template match="evtIrrf">
+    <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+      <asx:values>
+        <STRUCTURE>
+          <IDEEMPREGADOR>
+            <xsl:apply-templates select="ideEmpregador"/>
+          </IDEEMPREGADOR>
+          <INFOIRRF>
+            <xsl:apply-templates select="infoIRRF"/>
+          </INFOIRRF>
+        </STRUCTURE>
+      </asx:values>
+    </asx:abap>
+  </xsl:template>
+
+  <xsl:template match="ideEmpregador">
+    <TPINSC>
+      <xsl:value-of select="tpInsc"/>
+    </TPINSC>
+    <NRINSC>
+      <xsl:value-of select="nrInsc"/>
+    </NRINSC>
+  </xsl:template>
+
+
+  <xsl:template match="infoIRRF">
+    <YHRPAYBR_EFD_INFOIRRF_5012_TAB>
+      <NRRECARQBASE>
+        <xsl:value-of select="nrRecArqBase"/>
+      </NRRECARQBASE>
+      <INDEXISTINFO>
+        <xsl:value-of select="indExistInfo"/>
+      </INDEXISTINFO>
+      <INFOCRCONTRIB>
+        <xsl:apply-templates select="infoCRContrib"/>
+      </INFOCRCONTRIB>
+    </YHRPAYBR_EFD_INFOIRRF_5012_TAB>
+  </xsl:template>
+
+
+  <xsl:template match="infoCRContrib">
+    <YHRPAYBR_EFD_INFOCRCONTRIB_TAB>
+      <TPCR>
+        <xsl:value-of select="tpCR"/>
+      </TPCR>
+      <VRCR>
+        <xsl:value-of select="vrCR"/>
+      </VRCR>
+    </YHRPAYBR_EFD_INFOCRCONTRIB_TAB>
+  </xsl:template>
+
+
+</xsl:transform>
